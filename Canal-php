@@ -1,0 +1,48 @@
+<?php 
+//De los canales se conoce el tipo de canal, importe y si es HD o no. Algunos ejemplos de tipos de canal son: noticias, interés general, musical, deportivo, películas, educativo, infantil, educativo infantil, aventura.
+class Canal {
+    private $tipo;     //noticias, deportivo, infantil, etc.
+    private $importe;  // costo del canal
+    private $esHD;     // booleano: true si es HD, false si no
+
+    public function __construct($tipo, $importe, $esHD) {
+        $this->tipo = $tipo;
+        $this->importe = $importe;
+        $this->esHD = $esHD;
+    }
+
+    // Getters
+    public function getTipo() {
+        return $this->tipo;
+    }
+
+    public function getImporte() {
+        return $this->importe;
+    }
+
+    public function getEsHD() {
+        return $this->esHD;
+    }
+
+    // Setters
+    public function setTipo($tipo) {
+        $this->tipo = $tipo;
+    }
+
+    public function setImporte($importe) {
+        $this->importe = $importe;
+    }
+
+    public function setEsHD($esHD) {
+        $this->esHD = $esHD;
+    }
+
+    // ToString
+    public function __toString() {
+        $cadena = ("\n Tipo: " . $this->getTipo());
+       $cadena .= ("\n Importe: " . $this->getImporte());
+      $cadena.= ("HD:". $this->getEsHD() ? "Sí" : "No");
+        return $cadena;
+    }   
+}
+?>
